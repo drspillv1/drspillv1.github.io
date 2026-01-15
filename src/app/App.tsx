@@ -4,6 +4,7 @@ import { RotatingLogo } from '@/app/components/RotatingLogo';
 import { PrescriptionForm } from '@/app/components/PrescriptionForm';
 import { AdminDashboard } from '@/app/components/AdminDashboard';
 import { AdminLogin } from '@/app/components/AdminLogin';
+import { HeartMonitor } from '@/app/components/HeartMonitor';
 
 export default function App() {
   const [showAdmin, setShowAdmin] = useState(false);
@@ -58,13 +59,16 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50 to-cyan-50 flex flex-col items-center justify-center p-6 overflow-hidden relative">
+    <div className="min-h-screen bg-black flex flex-col items-center justify-center p-6 overflow-hidden relative">
+      {/* Heart Monitor Background */}
+      <HeartMonitor />
+
       {/* Animated background elements */}
       <motion.div
-        className="absolute top-20 left-10 w-64 h-64 bg-teal-200/20 rounded-full blur-3xl"
+        className="absolute top-20 left-10 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
+          opacity: [0.2, 0.4, 0.2],
         }}
         transition={{
           duration: 8,
@@ -73,10 +77,10 @@ export default function App() {
         }}
       />
       <motion.div
-        className="absolute bottom-20 right-10 w-96 h-96 bg-red-200/20 rounded-full blur-3xl"
+        className="absolute bottom-20 right-10 w-96 h-96 bg-red-500/10 rounded-full blur-3xl"
         animate={{
           scale: [1.2, 1, 1.2],
-          opacity: [0.5, 0.3, 0.5],
+          opacity: [0.4, 0.2, 0.4],
         }}
         transition={{
           duration: 10,
@@ -95,26 +99,10 @@ export default function App() {
         >
           <RotatingLogo />
           
-          <motion.h1
-            className="mt-8 text-4xl md:text-6xl font-bold text-gray-800 text-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-          >
-            Dr. Spill
-          </motion.h1>
-          
-          <motion.p
-            className="mt-4 text-lg md:text-xl text-gray-600 text-center max-w-md"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-          >
-            Coming Soon
-          </motion.p>
+
 
           <motion.div
-            className="mt-2 text-sm text-gray-500 text-center"
+            className="mt-2 text-sm text-gray-400 text-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
@@ -127,7 +115,7 @@ export default function App() {
 
         {/* Footer */}
         <motion.div
-          className="mt-12 text-center text-sm text-gray-400"
+          className="mt-12 text-center text-sm text-gray-500"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}

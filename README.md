@@ -1,7 +1,7 @@
 
-  # Coming Soon Website Design
+  # Coming Soon Website Design (Community) (Copy)
 
-  This is a code bundle for Coming Soon Website Design. The original project is available at https://www.figma.com/design/6JAo8MJhWvPQiZmp0HtVw9/Coming-Soon-Website-Design.
+  This is a code bundle for Coming Soon Website Design (Community) (Copy). The original project is available at https://www.figma.com/design/YPBtdGsxH4bPlUftYdd9KG/Coming-Soon-Website-Design--Community---Copy-.
 
   ## Running the code
 

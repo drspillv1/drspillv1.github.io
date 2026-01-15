@@ -71,7 +71,7 @@ export function AdminDashboard({ onBack }: AdminDashboardProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50 to-cyan-50 p-6">
+    <div className="min-h-screen bg-black p-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -82,7 +82,7 @@ export function AdminDashboard({ onBack }: AdminDashboardProps) {
           <Button
             onClick={onBack}
             variant="ghost"
-            className="mb-4 text-gray-600 hover:text-gray-900"
+            className="mb-4 text-gray-400 hover:text-white"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Site
@@ -90,8 +90,8 @@ export function AdminDashboard({ onBack }: AdminDashboardProps) {
 
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-4xl font-bold text-gray-800 mb-2">Admin Dashboard</h1>
-              <p className="text-gray-600">Dr. Spill - Signup Management</p>
+              <h1 className="text-4xl font-bold text-white mb-2">Admin Dashboard</h1>
+              <p className="text-gray-400">Dr. Spill - Signup Management</p>
             </div>
             <Button
               onClick={fetchSignups}
@@ -111,27 +111,27 @@ export function AdminDashboard({ onBack }: AdminDashboardProps) {
           transition={{ delay: 0.1 }}
           className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"
         >
-          <Card>
+          <Card className="bg-zinc-900 border-zinc-800">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-gray-600">
+              <CardTitle className="text-sm font-medium text-gray-400">
                 Total Signups
               </CardTitle>
-              <Users className="w-5 h-5 text-teal-600" />
+              <Users className="w-5 h-5 text-teal-400" />
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold text-gray-900">{signups.length}</div>
+              <div className="text-3xl font-bold text-white">{signups.length}</div>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="bg-zinc-900 border-zinc-800">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-gray-600">
+              <CardTitle className="text-sm font-medium text-gray-400">
                 Latest Signup
               </CardTitle>
-              <Mail className="w-5 h-5 text-red-500" />
+              <Mail className="w-5 h-5 text-red-400" />
             </CardHeader>
             <CardContent>
-              <div className="text-lg font-semibold text-gray-900">
+              <div className="text-lg font-semibold text-white">
                 {signups.length > 0 ? signups[0].email : 'No signups yet'}
               </div>
             </CardContent>
@@ -144,21 +144,21 @@ export function AdminDashboard({ onBack }: AdminDashboardProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <Card>
+          <Card className="bg-zinc-900 border-zinc-800">
             <CardHeader>
-              <CardTitle>All Signups</CardTitle>
+              <CardTitle className="text-white">All Signups</CardTitle>
             </CardHeader>
             <CardContent>
               {error && (
-                <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded mb-4">
+                <div className="bg-red-950/50 border border-red-800 text-red-400 px-4 py-3 rounded mb-4">
                   {error}
                 </div>
               )}
 
               {isLoading ? (
                 <div className="text-center py-12">
-                  <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600"></div>
-                  <p className="mt-2 text-gray-600">Loading signups...</p>
+                  <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-teal-400"></div>
+                  <p className="mt-2 text-gray-400">Loading signups...</p>
                 </div>
               ) : signups.length === 0 ? (
                 <div className="text-center py-12 text-gray-500">
@@ -169,11 +169,11 @@ export function AdminDashboard({ onBack }: AdminDashboardProps) {
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead>
-                      <tr className="border-b border-gray-200">
-                        <th className="text-left py-3 px-4 font-semibold text-gray-700">#</th>
-                        <th className="text-left py-3 px-4 font-semibold text-gray-700">Name</th>
-                        <th className="text-left py-3 px-4 font-semibold text-gray-700">Email</th>
-                        <th className="text-left py-3 px-4 font-semibold text-gray-700">Date</th>
+                      <tr className="border-b border-zinc-800">
+                        <th className="text-left py-3 px-4 font-semibold text-gray-400">#</th>
+                        <th className="text-left py-3 px-4 font-semibold text-gray-400">Name</th>
+                        <th className="text-left py-3 px-4 font-semibold text-gray-400">Email</th>
+                        <th className="text-left py-3 px-4 font-semibold text-gray-400">Date</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -183,12 +183,12 @@ export function AdminDashboard({ onBack }: AdminDashboardProps) {
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: index * 0.05 }}
-                          className="border-b border-gray-100 hover:bg-teal-50/50 transition-colors"
+                          className="border-b border-zinc-800 hover:bg-teal-500/5 transition-colors"
                         >
-                          <td className="py-3 px-4 text-gray-600">{index + 1}</td>
-                          <td className="py-3 px-4 font-medium text-gray-900">{signup.name}</td>
-                          <td className="py-3 px-4 text-gray-700">{signup.email}</td>
-                          <td className="py-3 px-4 text-gray-600 text-sm">
+                          <td className="py-3 px-4 text-gray-400">{index + 1}</td>
+                          <td className="py-3 px-4 font-medium text-white">{signup.name}</td>
+                          <td className="py-3 px-4 text-gray-300">{signup.email}</td>
+                          <td className="py-3 px-4 text-gray-400 text-sm">
                             {formatDate(signup.date)}
                           </td>
                         </motion.tr>
@@ -216,7 +216,7 @@ export function AdminDashboard({ onBack }: AdminDashboardProps) {
                   ...signups.map(s => [s.name, s.email, s.date]),
                 ]
                   .map(row => row.join(','))
-                  .join('\n');
+                  .join('\\n');
                 
                 const blob = new Blob([csv], { type: 'text/csv' });
                 const url = window.URL.createObjectURL(blob);
@@ -227,7 +227,7 @@ export function AdminDashboard({ onBack }: AdminDashboardProps) {
                 window.URL.revokeObjectURL(url);
               }}
               variant="outline"
-              className="border-teal-600 text-teal-600 hover:bg-teal-50"
+              className="border-teal-600 text-teal-400 hover:bg-teal-500/10"
             >
               Export to CSV
             </Button>

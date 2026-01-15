@@ -33,7 +33,7 @@ export function AdminLogin({ onLogin, onBack }: AdminLoginProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50 to-cyan-50 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-black flex items-center justify-center p-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ export function AdminLogin({ onLogin, onBack }: AdminLoginProps) {
         <Button
           onClick={onBack}
           variant="ghost"
-          className="mb-4 text-gray-600 hover:text-gray-900"
+          className="mb-4 text-gray-400 hover:text-white"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Site
@@ -52,15 +52,15 @@ export function AdminLogin({ onLogin, onBack }: AdminLoginProps) {
           animate={isShaking ? { x: [-10, 10, -10, 10, 0] } : {}}
           transition={{ duration: 0.4 }}
         >
-          <Card className="shadow-2xl border-t-4 border-teal-600">
+          <Card className="shadow-2xl border-t-4 border-teal-600 bg-zinc-900 border-zinc-800">
             <CardHeader className="text-center pb-4">
-              <div className="mx-auto w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mb-4">
-                <Lock className="w-8 h-8 text-teal-600" />
+              <div className="mx-auto w-16 h-16 bg-teal-500/10 rounded-full flex items-center justify-center mb-4">
+                <Lock className="w-8 h-8 text-teal-400" />
               </div>
-              <CardTitle className="text-2xl font-bold text-gray-800">
+              <CardTitle className="text-2xl font-bold text-white">
                 Admin Access
               </CardTitle>
-              <p className="text-sm text-gray-500 mt-2">
+              <p className="text-sm text-gray-400 mt-2">
                 Enter password to view dashboard
               </p>
             </CardHeader>
@@ -75,14 +75,14 @@ export function AdminLogin({ onLogin, onBack }: AdminLoginProps) {
                       setError('');
                     }}
                     placeholder="Enter admin password"
-                    className="text-center text-lg"
+                    className="text-center text-lg bg-zinc-800 border-zinc-700 text-white placeholder:text-gray-500"
                     autoFocus
                   />
                   {error && (
                     <motion.p
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="text-red-600 text-sm text-center"
+                      className="text-red-500 text-sm text-center"
                     >
                       {error}
                     </motion.p>
@@ -97,8 +97,8 @@ export function AdminLogin({ onLogin, onBack }: AdminLoginProps) {
                 </Button>
               </form>
 
-              <div className="mt-6 pt-6 border-t border-gray-200">
-                <p className="text-xs text-gray-400 text-center">
+              <div className="mt-6 pt-6 border-t border-zinc-800">
+                <p className="text-xs text-gray-500 text-center">
                   Dr. Spill Admin Panel
                 </p>
               </div>
