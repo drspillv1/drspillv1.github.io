@@ -328,6 +328,26 @@ body {
     margin-top: 2rem;
     padding-top: 1.5rem;
     border-top: 1px solid #27272a;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.instagram-icon {
+    width: 2rem;
+    height: 2rem;
+    color: #14b8a6;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.instagram-icon:hover {
+    color: #5eead4;
+    transform: scale(1.1);
+}
+
+.prescription-signature > div {
     text-align: right;
 }
 
