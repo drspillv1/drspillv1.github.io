@@ -1,7 +1,7 @@
 // Supabase Configuration
 // Replace these with your actual Supabase credentials
-const SUPABASE_PROJECT_ID = 'YOUR_PROJECT_ID';
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+const SUPABASE_PROJECT_ID = 'jzqwljvvktliwrocxnwf';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp6cXdsanZ2a3RsaXdyb2N4bndmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg0MzI4MDMsImV4cCI6MjA4NDAwODgwM30.RExT2TXlwk1V4NTaXApyj-9KYYeWeTGiC_o_gqGvToc';
 const ADMIN_PASSWORD = 'Favored247';
 
 // Page elements
